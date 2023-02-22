@@ -84,13 +84,14 @@ function verifyCoffeeOrder(size,creamer,sweetener){
     }
     // if all parameters meet the requirements, the function will state the coffee order
     else {
+        console.log("Coming right up!");
         return "A " + size + " cup of coffee with " + creamer + " and " + sweetener + ".";
     } 
 }
 
-//test case
-console.log(verifyCoffeeOrder('small', 'skim', 'syrup'));
-
+//test case, make sure the IDE/terminal can run the prompt function before testing
+console.log("Welcome in! Let me brew a cup of coffee for yah!");
+console.log(verifyCoffeeOrder(prompt("What size would you like?"), prompt("What kind of milk?"), prompt("Which type of sweetener?")));
 
 // Do not modify the line below, this is a 
 // special function to run the tests.
