@@ -32,7 +32,7 @@
 
 // Write your function here.
 
-//Boolean functions to verify valid inputs fro each condition
+//Boolean functions to verify valid inputs for each condition
 function isValidSize(size) {
     return (size === 'small' || size === 'large') ? true : false;
 }
@@ -45,7 +45,6 @@ function isValidSweetener(sweetener){
 
 // if all arguments meet all requirements, the function will state the coffee order
 function verifyCoffeeOrder(size,creamer,sweetener){
-
     return  (!isValidSize(size)) ? "Not a valid size" :
             (!isValidCreamer(creamer)) ? "Not a valid creamer" :
             (!isValidSweetener(sweetener)) ? "Not a valid sweetener" : 
@@ -54,7 +53,6 @@ function verifyCoffeeOrder(size,creamer,sweetener){
 
 
 //test case, make sure the IDE/terminal can run the prompt function before testing
-
 console.log("Welcome in! Let me brew a cup of coffee for yah!");
 console.log("Coming right up!");
 console.log(verifyCoffeeOrder(prompt("What size would you like?"), prompt("What kind of milk?"), prompt("Which type of sweetener?")));
