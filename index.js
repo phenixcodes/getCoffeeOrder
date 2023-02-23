@@ -28,69 +28,35 @@
 
 //   verifyCoffeeOrder('medium', 'skim', 'syrup');
 //   Returns: 'Not a valid size'
+// return ['small', 'large'].contains(size); }
 
 // Write your function here.
 
-//verifying if the size parameter is valid
-function getSize(size){
-    switch(size){
-        case 'small' :
-            return size; 
-        case 'large' :
-            return size;
-        default :
-            return 'Not a valid size';
-    }
+//Boolean functions to verify valid inputs fro each condition
+function isValidSize(size) {
+    return (size === 'small' || size === 'large') ? true : false;
 }
-//verifying if the creamer parameter is valid
-function getCreamer(creamer){
-    switch(creamer){
-        case 'milk' :
-           return creamer;
-        case 'half and half':
-            return creamer;
-        default :
-            return'Not a valid creamer';
-    }
+function isValidCreamer(creamer){
+    return (creamer === 'milk' || creamer === 'half and half') ? true : false;
 }
-//verifying if the sweetener parameter is valid
-function getSweetener(sweetener){
-    switch(sweetener){
-        case 'sugar' :
-            return sweetener;
-        case 'splenda' :
-            return sweetener;
-        default :
-            return 'Not a valid sweetener';
-    }
+function isValidSweetener(sweetener){
+    return (sweetener === 'splenda'|| sweetener === 'sugar') ? true : false;
 }
-//function will verify if all conditions for a coffee order have been met
+
+// if all arguments meet all requirements, the function will state the coffee order
 function verifyCoffeeOrder(size,creamer,sweetener){
 
-    //calling the above functions, then assigning the results to a variable
-    var isSize = getSize(size);
-    var isCreamer = getCreamer(creamer);
-    var isSweetener = getSweetener(sweetener);
-
-    //if any parameter is proven invalid, the function will reveal the invalid string to the user
-    if (isSize === 'Not a valid size'){
-        return isSize;
-    }
-    else if (isCreamer === 'Not a valid creamer'){
-        return isCreamer;
-    } 
-    else if (isSweetener === 'Not a valid sweetener'){
-        return isSweetener;
-    }
-    // if all parameters meet the requirements, the function will state the coffee order
-    else {
-        console.log("Coming right up!");
-        return "A " + size + " cup of coffee with " + creamer + " and " + sweetener + ".";
-    } 
+    return  (!isValidSize(size)) ? "Not a valid size" :
+            (!isValidCreamer(creamer)) ? "Not a valid creamer" :
+            (!isValidSweetener(sweetener)) ? "Not a valid sweetener" : 
+            "A " + size + " cup of coffee with " + creamer + " and " + sweetener + ".";
 }
 
+
 //test case, make sure the IDE/terminal can run the prompt function before testing
+
 console.log("Welcome in! Let me brew a cup of coffee for yah!");
+console.log("Coming right up!");
 console.log(verifyCoffeeOrder(prompt("What size would you like?"), prompt("What kind of milk?"), prompt("Which type of sweetener?")));
 
 // Do not modify the line below, this is a 
